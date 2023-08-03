@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Home</title>
+    <link rel="stylesheet" type="text/css" media="all"
+          href="../css/standard.css" th:href="@{/css/standard.css}" />
+    <script src="js/Core.js" charset="UTF-8" defer></script>
+    <script src="js/ActivePage.js" charset="UTF-8" defer></script>
+</head>
+<body>
+
+<div align="right">
+
+    <a id="Logout" th:href="@{/logout(from='homePge')}" data-th-utext='${lang.getString("logout")}' class="logoutPanel">Logout</a>
+</div>
+
+
+<div align="center" >
+    <a id="id_GoToHomePage"  th:align="left" data-th-utext='${lang.getString("backHomepage")} ' >Home</a>
+    <a id ="id_GoToShoppingCart"  th:align="center" data-th-utext='${lang.getString("shoppingCart")}'>Carrello</a>
+    <a id ="id_GoToOrders" th:align="right" data-th-utext='${lang.getString("orderPage")} '>Ordini</a>
+</div>
+
+<h2>E-commerce tiw</h2>
+<p align="center" th:text="${'Nice to see you again ' + session.user.name + ' ' + session.user.surname}"></p>
+
+<h2>
+    <div id="id_alert" style="background-color:Tomato;" class="alertmessage"></div>
+</h2>
+
+<div id="homeViewContainer">
+
+
+
+    <div id="id_searchItem" align="center" class="top-nav">
+        <form method="post" action="#">
+            <input type="text" minlength="1" max="50" placeholder="ricerca oggetti" name="key">
+            <input type="button" value="cerca">
+        </form>
+    </div>
+
+    <br><br>
+
+
+    <table align="center" border="2" id="id_lastSeenItemsTableContainer">
+        <thead>
+        <tr>
+            <th>Nome</th>
+            <th>descrizione</th>
+            <th>categoria</th>
+            <th>visualizza</th>
+
+        </tr>
+        </thead>
+        <tbody id="id_lastSeenItemsTableBody">
+        <tr th:each="item :${itemList}">
+            <td valign="center" th:text="${item.getName()}">nome prodotto</td>
+            <td valign="center" th:text="${item.getDescription()}">descrizione</td>
+            <td valign="center" th:text="${item.getCategory()}">categoria</td>
+            <td><img alt="" border=2 height=100 width=100  th:src="@{'data:image/jpeg;base64,'+${item.getImage()}}"> </td>
+
+            <td>
+                <a href="/ItemDetails" th:href="@{/ItemDetails(itemId=${item.getId_item()})}">
+                    <input type="submit" th:value='${lang.getString("ItemDetails")}'>
+                </a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+
+<div th:align="center" id="id_searchElementContainer">
+
+    <div align="center" >
+
+        <p id="id_noItemFound"></p>
+
+        <div >
+            <table align="center" th:border="2" id="id_searchTable">
+
+                <!--                intestazione tabella-->
+                <thead>
+                <tr>
+                    <th>id</th>
+                    <th>nome</th>
+                    <th>descrizione</th>
+                    <th>prezzo minimo</th>
+                    <th>dettagli</th>
+                </tr>
+                </thead>
+
+
+                <tbody id="id_searchTableBody" th:border="1">
+                <tr >
+
+                    <td valign="center" ></td>
+                    <td valign="center" >/td>
+                    <td valign="center" ></td>
+                    <td valign="center" ></td>
+                    <td>
+
+                        <!--                        richiesta maggiori dettagli-->
+                        <a href="/ItemDetails" >
+<!--                            <input type="submit" th:value='${lang.getString("ItemDetails")}'>-->
+                        </a>
+                    </td>
+                </tr>
+                </tbody>
+
+
+            </table>
+        </div>
+
+        </tr>
+    </div>
+
+</div>
+
+<div th:align="center" id="id_itemDetailsContainer"  >
+
+
+
+        <h2>item details</h2> <br>
+
+        <!--    informazioni dettagliate oggetto selezionato-->
+        <table align="center" border="1" id="itemDetailsTable">
+
+            <thead>
+            <tr>
+                <th>id ordine</th>
+                <th>nome</th>
+                <th>descrizione</th>
+                <th>categoria</th>
+                <th>foto</th>
+            </tr>
+            </thead>
+            <tbody id ="itemDetailsBody">
+            <tr>
+                <td valign="center" ></td>
+                <td valign="center" ></td>
+                <td valign="center" ></td>
+                <td valign="center" ></td>
+                <td><img alt="" border=2 height=100 width=100 >
+                </td>
+            </tr>
+
+            </tbody>
+        </table>
+
+
+
+        <!--venditori-->
+
+        <h2>Venduto da</h2>
+
+
+        <div >
+            <table border="1" align="center" id="id_sellersDetailsTable" >
+
+                <thead>
+                <tr>
+                    <th>id venditore</th>
+                    <th>nome</th>
+                    <th>valutazione</th>
+                    <th>prezzo</th>
+                    <th>gratis da</th>
+                    <th>valore nel carrello</th>
+                    <th>quantità nel carrello</th>
+                    <th>aggiungi al carrello</th>
+                    <th>Politiche di spedizione</th>
+                </tr>
+
+                </thead>
+
+                <tbody th:border="3" id="id_sellersDetailsBody">
+                <tr th:block >
+                    <td valign="center" >id venditore</td>
+                    <td valign="center" >nome venditore</td>
+                    <td valign="center" >rating</td>
+                    <td valign="center" >prezzo </td>
+                    <td valign="center" >spedizione gratuita</td>
+
+                    <!--                da fare , usare sessione e cookies-->
+                    <!--                <td valign="center" ><p style="background-color:Tomato;">da fare</p>-->
+
+                    <!--                <td valign="center" th:unless="${pricesOnCart!=null && pricesOnCart.containsKey(sellers.get(i).sellerId)}" th:text="-.-">0.0</td>-->
+                    <td valign="center" >valore nel carrello</td>
+                    <td valign="center" >quantita nel carrello</td>
+                    <td valign="center" >aggiungi al carrello</td>
+                    <td id="id_politica di spedizione">
+                        <!--politiche di spedizione -->
+                        <table  align="center" >
+
+                            <thead>
+                            <tr>
+                                <th>numero minimo articoli </th>
+                                <th>numero massimo articoli</th>
+                                <th>prezzo spedizione fascia </th>
+                            </tr>
+                            </thead>
+
+                            <tbody>
+                            <tr>
+                                <td valign="center" >2</td>
+                                <td valign="center" >5</td>
+                                <td valign="center" >5.99</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+
+                </tbody>
+            </table>
+        </div>
+
+
+</div>
+
+<table border="1"  align="center" id="cartPageContainer">
+
+<!--    <h2>CART PAGE</h2>-->
+    <thead>
+    <tr>
+        <th>Nome venditore</th>
+        <th>prezzo totale</th>
+        <th>costo spedizione</th>
+        <th>articoli</th>
+        <th>ordina </th>
+    </tr>
+    </thead>
+
+    <tbody th:border="1" id="cartPageBody">
+
+    <tr>
+        <td>nome venditore </td>
+        <td >prezzo totale </td>
+        <td >costo spedizone </td>
+        <td>
+            <table  align="center">
+                <tbody>
+                <tr>
+                    <td >nome articolo"</td>
+                </tr>
+                </tbody>
+            </table>
+        </td>
+        <td>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+
+
+<table align="center" border="2" id="id_ordersPageContainer">
+
+
+
+</table>
+
+
+
+
+</body>
+</html>

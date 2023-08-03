@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+
+<head>
+    <title>Login page</title>
+    <meta charset="UTF-8"/>
+    <link rel="stylesheet" type="text/css" href="css/standard.css"/>
+    <script src="js/Core.js" charset="UTF-8" defer></script>
+    <script src="js/Login.js" charset="UTF-8" defer></script>
+</head>
+
+<body>
+
+<div class="centeredMain">
+    <div class="centeredMainBlock loginBlock">
+        <form method="POST" action="#">
+            <p id="errorMessage"></p>
+            <input type="text" name="email" minlength="1" maxlength="30" placeholder="Nome univoco" required/>
+            <input type="password" name="password" placeholder="Password" required/>
+            <input type="button" name="login" id="LoginButton" value="Accesso"/>
+        </form>
+    </div>
+</div>
+
+
+</body>
+</html>
