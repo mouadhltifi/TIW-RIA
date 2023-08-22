@@ -45,7 +45,7 @@ public class SearchItems extends HttpServletDBConnected{
         //check if the key search is correct
         if(keySearch == null || keySearch.isEmpty()) {
             resp.setStatus(HttpServletResponse.SC_BAD_REQUEST);
-            resp.getWriter().println("key parameter is null");
+            //resp.getWriter().println("key parameter is null");
             return;
         }
 

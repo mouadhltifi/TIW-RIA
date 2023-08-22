@@ -362,7 +362,8 @@
 
                 catgItemCell = document.createElement("td");
                 let img = document.createElement("img");
-                //img.src = item.image; //troppo grande
+                img.src = item.image;
+
                 img.height = 100;
                 img.width = 100;
                 catgItemCell.appendChild(img);
