@@ -105,7 +105,7 @@
 
                 anchor.addEventListener("click", (e) => {
                     // dependency via module parameter
-                    self.orchestrator.showItemDetails(anchor.getAttribute("itemId"))
+                    self.orchestrator.showItemDetails(e.target.getAttribute("itemId"))
                     // searchedList.show(anchor.getAttribute("itemId")); // passing id for query
                 }, false);
                 anchor.href = "#";

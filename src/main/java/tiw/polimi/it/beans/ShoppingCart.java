@@ -37,7 +37,7 @@ public class ShoppingCart {
     }
 
     public void setShippingPrice() {
-        if (seller.getFreeShipment() >= totalPrice) {
+        if (totalPrice <= seller.getFreeShipment()) {
             this.shippingPrice = 0.0;
             return;
         }
