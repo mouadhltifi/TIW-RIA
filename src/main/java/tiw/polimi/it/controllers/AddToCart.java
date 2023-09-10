@@ -170,24 +170,23 @@ public class AddToCart extends HttpServletDBConnected{
         return list;
     }
 
-
     private void findFromCartList(List<ShoppingCart> cartList, int quantity, OnSale onSale) {
 
         for (ShoppingCart cart : cartList
         ) {
-            if(cart.getSeller().getSellerId() == onSale.getSellers().get(0).getSellerId()) {
+            if (cart.getSeller().getSellerId() == onSale.getSellers().get(0).getSellerId()) {
                 //buying other items from the same seller
                 System.out.println("compro da stesso venditore");
                 cart.setShippingPrice();
-                cart.updateSellerCart(onSale.getSellers().get(0),quantity,onSale.getItems().get(0),onSale.getPrices().get(0));
+                cart.updateSellerCart(onSale.getSellers().get(0), quantity, onSale.getItems().get(0), onSale.getPrices().get(0));
                 return;
-        }
-        }
-            //buying for the first time to this seller
-            System.out.println("acquisto da nuovo venditore");
+            }
 
-            addToCartList(cartList,onSale.getItems().get(0),onSale,quantity,onSale.getSellers().get(0));
+        //buying for the first time to this seller
+        System.out.println("acquisto da nuovo venditore");
 
+        addToCartList(cartList, onSale.getItems().get(0), onSale, quantity, onSale.getSellers().get(0));
+    }
     }
 
 

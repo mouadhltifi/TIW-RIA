@@ -466,8 +466,8 @@
 
 
                         if (document.getElementById("inputID").value > 0) {
-                            makeCall("POST", "addToCart?id_in_vendita="
-                                + ids_inVendita[i] + "&itemId=" + document.getElementById("id_itemIdAddToCart").textContent
+                            makeCall("POST", "addToCart?id_in_vendita=" + ids_inVendita[i] +
+                                "&itemId=" + document.getElementById("id_itemIdAddToCart").textContent
                                 + "&qty=" + input.value
                                 + "&cartList=" + encodeURIComponent((sessionStorage.getItem("cartList"))),
                                 // +"&cartList=" +encodeURI(JSON.stringify(sessionStorage.getItem("cartList"))),
@@ -786,7 +786,8 @@
                 externalRow.appendChild(priceCell);
 
                 shippingCost = document.createElement("td");
-                shippingCost.innerHTML = obj[i].shippingPrice === 0 ? "gratis" : obj[i].shippingPrice;
+                shippingCost.innerHTML = obj[i].shippingPrice;
+                //shippingCost.innerHTML = obj[i].shippingPrice === 0 ? "gratis" : obj[i].shippingPrice;
                 externalRow.appendChild(shippingCost);
 
                 let lastTd = document.createElement("td");

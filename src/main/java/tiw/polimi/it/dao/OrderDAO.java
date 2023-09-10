@@ -39,7 +39,7 @@ public class OrderDAO extends GeneralDAO {
             conn.setAutoCommit(false);
             preparedStatement = conn.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
             preparedStatement.setDate(1, calculateShippingDate());
-            preparedStatement.setDouble(2, purchasedCart.getTotalPrice());
+            preparedStatement.setDouble(2, purchasedCart.getTotalPrice() + purchasedCart.getShippingPrice());
             preparedStatement.setString(3, user.getAddress());
             preparedStatement.setInt(4, purchasedCart.getSeller().getSellerId());
             preparedStatement.setInt(5, user.getUserId());

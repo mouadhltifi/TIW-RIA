@@ -28,6 +28,10 @@ public class ShoppingCart {
         return totalPrice;
     }
 
+    public double getShippingPrice(){
+        return shippingPrice;
+    }
+
     public int getQuantity() {
         return quantity;
     }
@@ -48,7 +52,7 @@ public class ShoppingCart {
         ) {
             if (this.quantity >= s.getMinItems() && this.quantity <= s.getMaxItems()) {
                 this.shippingPrice = s.getPrice();
-                //return;
+                return;
             }
         }
 
@@ -78,7 +82,7 @@ public class ShoppingCart {
 
         this.quantity += quantity;
         this.totalPrice+=quantity*price;
-
+        this.shippingPrice = shippingPrice;
 
         for (LightItem i: this.item
              ) {
