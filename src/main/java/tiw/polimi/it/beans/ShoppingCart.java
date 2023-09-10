@@ -37,7 +37,10 @@ public class ShoppingCart {
     }
 
     public void setShippingPrice() {
-        if (totalPrice <= seller.getFreeShipment()) {
+        if (this.totalPrice==0.0){
+            return;
+        }
+        else if (totalPrice >= seller.getFreeShipment()) {
             this.shippingPrice = 0.0;
             return;
         }
@@ -45,13 +48,26 @@ public class ShoppingCart {
         ) {
             if (this.quantity >= s.getMinItems() && this.quantity <= s.getMaxItems()) {
                 this.shippingPrice = s.getPrice();
-                return;
+                //return;
             }
         }
+
+
+        return;
+        /*
+        else {
+            for (ShippingPolicy s : seller.getsPolicy()
+            ) {
+                if (this.quantity >= s.getMinItems() && this.quantity <= s.getMaxItems()) {
+                    this.shippingPrice = s.getPrice();
+                    return;
+                }
+            }
+        }
+        */
        // throw new Exception("problema con calcolo fascia di spedzione");
 
-        System.out.println("fouri da range di politica di spedizione ");
-        this.shippingPrice = 10.99;
+
     }
 
     public boolean checkSellerById(int sellerId ){
