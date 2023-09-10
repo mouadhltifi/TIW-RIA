@@ -20,7 +20,7 @@ public class Item {
         this.name = name;
         this.description = description;
         this.category = category;
-        this.image = "images/"+id_item+".jpg";
+        this.image = id_item+".jpg";
 /*
         try {
             byte[] fileContent = FileUtils.readFileToByteArray(new File("C:\\Users\\Momo\\IdeaProjects\\TIW-RIA\\src\\main\\java\\tiw\\polimi\\it\\images\\1.jpg"));

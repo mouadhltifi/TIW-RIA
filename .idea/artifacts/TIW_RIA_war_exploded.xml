@@ -1,0 +1,44 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="TIW-RIA:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/TIW_RIA_war_exploded</output-path>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="TIW-RIA" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="Maven: jakarta.mvc:jakarta.mvc-api:2.0.0" />
+          <element id="library" level="project" name="Maven: mysql:mysql-connector-java:5.1.39" />
+          <element id="library" level="project" name="Maven: org.thymeleaf:thymeleaf:3.0.12.RELEASE" />
+          <element id="library" level="project" name="Maven: ognl:ognl:3.1.26" />
+          <element id="library" level="project" name="Maven: org.javassist:javassist:3.20.0-GA" />
+          <element id="library" level="project" name="Maven: org.attoparser:attoparser:2.0.5.RELEASE" />
+          <element id="library" level="project" name="Maven: org.unbescape:unbescape:1.1.6.RELEASE" />
+          <element id="library" level="project" name="Maven: org.apache.commons:commons-text:1.9" />
+          <element id="library" level="project" name="Maven: org.apache.commons:commons-lang3:3.11" />
+          <element id="library" level="project" name="Maven: commons-io:commons-io:2.11.0" />
+          <element id="library" level="project" name="Maven: org.slf4j:slf4j-api:1.7.5" />
+          <element id="library" level="project" name="Maven: org.slf4j:slf4j-log4j12:1.7.5" />
+          <element id="library" level="project" name="Maven: log4j:log4j:1.2.17" />
+          <element id="library" level="project" name="Maven: com.google.code.gson:gson:2.8.5" />
+        </element>
+      </element>
+      <element id="javaee-facet-resources" facet="TIW-RIA/web/Web" />
+      <element id="artifact" artifact-name="unnamed" />
+      <element id="file-copy" path="$PROJECT_DIR$/src/main/webapp/WEB-INF/images/1.jpg" />
+      <element id="file-copy" path="$PROJECT_DIR$/src/main/webapp/WEB-INF/images/2.jpg" />
+      <element id="file-copy" path="$PROJECT_DIR$/src/main/webapp/WEB-INF/images/3.jpg" />
+      <element id="file-copy" path="$PROJECT_DIR$/src/main/webapp/WEB-INF/images/4.jpg" />
+      <element id="file-copy" path="$PROJECT_DIR$/src/main/webapp/WEB-INF/images/5.jpg" />
+      <element id="file-copy" path="$PROJECT_DIR$/src/main/webapp/WEB-INF/images/6.jpg" />
+      <element id="file-copy" path="$PROJECT_DIR$/src/main/webapp/WEB-INF/images/7.jpg" />
+      <element id="file-copy" path="$PROJECT_DIR$/src/main/webapp/WEB-INF/images/8.jpg" />
+      <element id="file-copy" path="$PROJECT_DIR$/src/main/webapp/WEB-INF/images/9.jpg" />
+      <element id="file-copy" path="$PROJECT_DIR$/src/main/webapp/WEB-INF/images/10.jpg" />
+      <element id="file-copy" path="$PROJECT_DIR$/src/main/webapp/WEB-INF/images/11.jpg" />
+      <element id="file-copy" path="$PROJECT_DIR$/src/main/webapp/WEB-INF/images/12.jpg" />
+      <element id="file-copy" path="$PROJECT_DIR$/src/main/webapp/WEB-INF/images/13.jpg" />
+      <element id="file-copy" path="$PROJECT_DIR$/src/main/webapp/WEB-INF/images/14.jpg" />
+    </root>
+  </artifact>
+</component>
