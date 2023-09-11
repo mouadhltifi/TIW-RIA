@@ -53,6 +53,8 @@ public class GetItemDetails extends HttpServletDBConnected {
 
 
         Cookie[] cookies = req.getCookies();
+
+
         for (Cookie c : cookies
         ) {
             if (c.getName().equalsIgnoreCase("itemList")) {

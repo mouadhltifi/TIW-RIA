@@ -56,6 +56,7 @@ public class OrderDAO extends GeneralDAO {
 
                 for (LightItem item :purchasedCart.getItem()
                 ) {
+                    //seconda query
                     insertItems(item, user, (int) id);
                 }
             }else throw new IllegalArgumentException("resulset key is null");
