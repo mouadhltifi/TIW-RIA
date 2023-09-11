@@ -81,7 +81,7 @@ public class ShoppingCart {
     public void updateSellerCart(Seller seller, int quantity, Item itemAdded, Double price) {
 
         this.quantity += quantity;
-        this.totalPrice+=quantity*price;
+        this.totalPrice += Double.parseDouble(String.format("%.2f", quantity * price));
         this.shippingPrice = shippingPrice;
 
         for (LightItem i: this.item

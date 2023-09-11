@@ -637,13 +637,14 @@
                     "                    <th>Shipping date</th>\n" +
                     "                    <th>address</th>\n" +
                     "                    <th>order Id</th>\n" +
+                    "                    <th>price</th>\n" +
                     "                </tr>";
                 infoTable.appendChild(headInfoTable);
 
                 let bodyInfoTable = document.createElement("tbody");
                 let innerRowInfoTable = document.createElement("tr");
 
-                let sellerNameCell, shippingDateCell, addressCell, orderID;
+                let sellerNameCell, shippingDateCell, addressCell, orderID, price;
                 sellerNameCell = document.createElement("td");
                 sellerNameCell.innerText = msg[k].sellerName;
                 innerRowInfoTable.appendChild(sellerNameCell);
@@ -661,6 +662,10 @@
                 orderID = document.createElement("td");
                 orderID.innerText = msg[k].orderId;
                 innerRowInfoTable.appendChild(orderID);
+
+                price = document.createElement("td");
+                price.innerText = parseFloat(msg[k].totalPrice).toFixed(2);
+                innerRowInfoTable.appendChild(price);
 
                 bodyInfoTable.appendChild(innerRowInfoTable);
                 infoTable.appendChild(bodyInfoTable);
@@ -697,6 +702,8 @@
                     qtyCell = document.createElement("td");
                     qtyCell.innerText = lightItem[j].qty;
                     itemRow.appendChild(qtyCell);
+
+
 
 
                     bodyItemTable.appendChild(itemRow);
